@@ -20,7 +20,7 @@ class String
 	def to_frequency_hash
 		freqency_hash = {}
 		each_char do |c|
-			unless c.blank?
+			if c.match(/^[a-zA-Z0-9]+$/)
 				s = c.to_sym
 				freqency_hash.has_key?(s) ? freqency_hash[s] += 1 : freqency_hash[s] = 1
 			end
